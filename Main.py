@@ -1,11 +1,34 @@
-t_base = float(input("Introduzca la base del triangulo:"))
-t_height = float(input("Introduzca la altura del triangulo:"))
-t_area = t_base * t_height / 2
-print(f"el area del triangulo es de {t_area}")
+# Definimos una función reutilizable que se repite hasta que
+# se introduce un valor correcto en este caso un número "float"
+def numcheck():
+    while True:
+        try:
+            checked_number = float(input())
+            return checked_number
+        except ValueError:
+            print("Key error\nPor favor, introduzca un valor numérico valido")
 
-numcheck = float(input("Introduzca el numero a comprobar:"))
-pypar = numcheck % 2
-if pypar == 0:
-    print(f"{numcheck} es un numero par")
-else:
-    print(f"{numcheck} es un numero impar")
+
+# Definimos la función del cálculo del área del triángulo
+def pytagoras():
+    print("Introduzca la base del triangulo:")
+    triangle_base = numcheck()
+    print("Introduzca la altura del triangulo:")
+    triangle_height = numcheck()
+    triangle_area = triangle_base * triangle_height / 2
+    print(f"El área del triángulo es de: {triangle_area}")
+
+
+# Definimos la función que mediante el operador de resto sabremos si el número es par
+def pypar():
+    print("Introduzca el numero a comprobar:")
+    number = numcheck()
+    resto = number % 2
+    if resto == 0:
+        print(f"{number} es un numero par")
+    else:
+        print(f"{number} es un numero impar")
+
+
+pytagoras()
+pypar()
