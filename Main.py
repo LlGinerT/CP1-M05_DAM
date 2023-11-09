@@ -10,20 +10,20 @@ def numcheck():
 
 
 # Definimos la función del cálculo del área del triángulo
-def pytagoras():
+def area_calcs():
     # creamos un bucle con un match que se repetirá hasta tener seleccionada
     # una unidad almacenada de las disponibles que usaremos luego
     while True:
-        unidad = input("Seleccione unidad de medida(m/cm/mm):").lower()
-        match unidad:
+        unit = input("Seleccione unidad de medida (m/cm/mm):").lower()
+        match unit:
             case ("m"):
-                unidad = "m²"
+                unit = "m²"
                 break
             case ("cm"):
-                unidad = "cm²"
+                unit = "cm²"
                 break
             case ("mm"):
-                unidad = "mm²"
+                unit = "mm²"
                 break
             case _:
                 print("Unidad seleccionada no valida\nPor favor introduzca una unidad valida")
@@ -33,11 +33,11 @@ def pytagoras():
     print("Introduzca la altura del triangulo:")
     triangle_height = numcheck()
     triangle_area = triangle_base * triangle_height / 2
-    print(f"El área del triángulo es de: {triangle_area}{unidad}")
+    print(f"El área del triángulo es de: {triangle_area}{unit}")
 
 
 # Definimos la función que mediante el operador módulo sabremos si el número es par
-def pypar():
+def par_impar():
     print("Introduzca el numero a comprobar:")
     number = numcheck()
     resto = number % 2
@@ -47,5 +47,5 @@ def pypar():
         print(f"{number} es un numero impar")
 
 
-pytagoras()
-pypar()
+area_calcs()
+par_impar()
